@@ -17,10 +17,10 @@ return new class extends Migration
             $table->integer('gia');
             $table->string('hinh');
             $table->longText('mota');
-            $table->interger('danhgia');
+            $table->integer('danhgia');
             $table->integer('soluongton');
             $table->integer('soluongdaban');
-            $table->integer('id_anhmuc');
+            $table->integer('id_danhmuc');
             $table->timestamps();
         });
     }
