@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 //php artisan serve
 Route::get('/', function () {
-    return view('welcome');
+    return view('Client.index');
 });
