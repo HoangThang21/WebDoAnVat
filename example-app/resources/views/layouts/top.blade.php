@@ -40,13 +40,13 @@
 
 					<li class="sidebar-item ">
 						<a class="sidebar-link " href="#">
-						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý nghệ sĩ</span>
+						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý danh mục</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item ">
 						<a class="sidebar-link" href="#">
-						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý nhạc</span>
+						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý mặt hàng</span>
 						</a>
 					</li>
 					<li class="sidebar-item ">
