@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //php artisan serve
+
 Route::get('/', function () {
     return view('Client.index');
+});
+
+
+Route::get('/cart', function () {
+    return view('Client.cart');
 });
