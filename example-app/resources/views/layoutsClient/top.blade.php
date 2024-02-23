@@ -36,3 +36,4 @@
     </head>
 
     <body>
+        @include('layoutsClient.header')
