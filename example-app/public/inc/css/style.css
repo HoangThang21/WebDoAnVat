@@ -203,7 +203,7 @@
     height: 48px;
     border-radius: 48px;
     border: 1px solid var(--bs-white);
-    background: var(--bs-primary);
+    background: var(--bs-warning);
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
