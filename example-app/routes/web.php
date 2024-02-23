@@ -32,3 +32,7 @@ Route::get('/shop', function () {
 Route::get('/shop-detail', function () {
     return view('Client.shopdetail');
 });
+Route::get('/testimonial', function () {
+    return view('Client.testimonial');
+});
+
