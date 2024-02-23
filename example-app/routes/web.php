@@ -35,4 +35,8 @@ Route::get('/shop-detail', function () {
 Route::get('/testimonial', function () {
     return view('Client.testimonial');
 });
+Route::get('/checkout', function () {
+    return view('Client.checkout');
+});
+
 
