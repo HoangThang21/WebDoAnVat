@@ -39,23 +39,23 @@
 					</li>
 
 					<li class="sidebar-item ">
-						<a class="sidebar-link " href="{{ route('qlnghesi') }}">
+						<a class="sidebar-link " href="#">
 						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý nghệ sĩ</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item ">
-						<a class="sidebar-link" href="{{ route('qlnhac') }}">
+						<a class="sidebar-link" href="#">
 						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý nhạc</span>
 						</a>
 					</li>
 					<li class="sidebar-item ">
-						<a class="sidebar-link" href="{{ route('qlalbum') }}">
+						<a class="sidebar-link" href="#">
 						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý Album</span>
 						</a>
 					</li>
 					<li class="sidebar-item ">
-						<a class="sidebar-link" href="{{ route('qltheloai') }}">
+						<a class="sidebar-link" href="#">
 						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý thể loại</span>
 						</a>
 					</li>
