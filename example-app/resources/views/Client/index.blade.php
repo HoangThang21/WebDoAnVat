@@ -190,7 +190,7 @@
                                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-warning"><i class="fa fa-shopping-bag me-2 text-warning"></i> Add to cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -206,7 +206,7 @@
                                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0">$4.99 / kg</p>
-                                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-warning"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -487,8 +487,8 @@
                             <div class="service-item bg-secondary rounded border border-secondary">
                                 <img src="img/featur-1.jpg" class="img-fluid rounded-top w-100" alt="">
                                 <div class="px-4 rounded-bottom">
-                                    <div class="service-content bg-primary text-center p-4 rounded">
-                                        <h5 class="text-white">Fresh Apples</h5>
+                                    <div class="service-content bg-light text-center p-4 rounded">
+                                        <h5 class="text-dark">Fresh Apples</h5>
                                         <h3 class="mb-0">20% OFF</h3>
                                     </div>
                                 </div>
