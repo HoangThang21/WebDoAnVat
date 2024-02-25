@@ -151,11 +151,21 @@ class AdminController extends Controller
                 }
             }
             if (count($parts) == 2 && is_numeric($parts[0]) && is_string($parts[1])) {
-                if ($parts[1] == 'userde') {
+                if ($parts[1] === 'userde') {
                     $user = User::where('id', $parts[0])
                         ->delete();
 
                     return redirect()->intended('/Administrator');
+                }
+                if ($parts[1] === 'suadm') {
+
+                    $danhmuc = DanhMuc::where('id', $parts[0])->first();
+
+                    return view('Auth.qldanhmuc.suadanhmuc', [
+                        'ttnguoidung' =>   Auth::guard('api')->user(),
+                        'danhmuc' => $danhmuc,
+
+                    ]);
                 }
             }
         }
@@ -212,7 +222,43 @@ class AdminController extends Controller
 
         ]);
     }
+    public function suamdm(Request $request)
+    {
 
+        $request->validate([
+            'txttendanhmuc' => ['required'],
+
+            'txthinh' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+        if ($request->file('txthinh') != null) {
+
+            $generatedimage = 'image' . time() . '-' . $request->file('txthinh')->getClientOriginalName();
+            $request->file('txthinh')->move(public_path('images'), $generatedimage);
+            $nhac = DanhMuc::where('id', $request->input('iddanhmuc'))
+                ->update([
+                    'tendanhmuc' => $request->input('txttendanhmuc'),
+                    'imagemusic' => $generatedimage,
+
+                ]);
+            return view('Auth.qldanhmuc.listdanhmuc', [
+                'ttnguoidung' =>   Auth::guard('api')->user(),
+                'danhmuc' => DanhMuc::all(),
+
+            ]);
+        } else {
+            $nhac = DanhMuc::where('id', $request->input('iddanhmuc'))
+                ->update([
+                    'tendanhmuc' => $request->input('txttendanhmuc'),
+
+
+                ]);
+            return view('Auth.qldanhmuc.listdanhmuc', [
+                'ttnguoidung' =>   Auth::guard('api')->user(),
+                'danhmuc' => DanhMuc::all(),
+
+            ]);
+        }
+    }
     public function show(string $id)
     {
         //
@@ -261,7 +307,7 @@ class AdminController extends Controller
         }
     }
 
-    public function qlsanpham() 
+    public function qlsanpham()
     {
         return view('Auth.qlsanpham.sanpham', [
             'ttnguoidung' =>   Auth::guard('api')->user(),
@@ -269,12 +315,14 @@ class AdminController extends Controller
         ]);
     }
 
-    public function themsanpham() {
+    public function themsanpham()
+    {
         return view('Auth.qlsanpham.themsanpham', [
             'ttnguoidung' => Auth::guard('api')->user()
         ]);
     }
-    public function nutThemSanPham(Request $request) {
+    public function nutThemSanPham(Request $request)
+    {
         $request->validate([
             'txttensp' => ['required'],
             'txtgia' => ['required'],
@@ -306,5 +354,3 @@ class AdminController extends Controller
         //
     }
 }
-
-

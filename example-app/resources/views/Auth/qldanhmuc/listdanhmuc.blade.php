@@ -16,8 +16,8 @@
 					  <tr><td>{{  $dm["tendanhmuc"] }}</td>
 						  <td><img src="../../img/{{ $dm['hinh'] }}" width="80" class="img-thumbnail"></td>
 						<?php 
-                         echo ' <td><a href="/Administrator/"><i class="bi bi-pencil bi-lg"></i> </a>|
-                    <a href="/Administrator"><i class="bi bi-trash bi-xl"></i></a></td></tr>';
+                         echo ' <td><a href="/Administrator/'. $dm['id'] .'&suadm"><i class="bi bi-pencil bi-lg"></i> </a>|
+                    <a href="/Administrator/'. $dm['id'] .'&xoadm"><i class="bi bi-trash bi-xl"></i></a></td></tr>';
 					endforeach; ?>
                     
 				</table>

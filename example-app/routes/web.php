@@ -81,17 +81,22 @@ Route::post('/Administrator/themdm', [
 ]);
 
 //SAN PHAM
-Route::get('/Administrator/qlsanpham',[
+Route::get('/Administrator/qlsanpham', [
     AdminController::class, 'qlsanpham'
 ]);
 
-Route::get('/Administrator/themsanpham',[
+Route::get('/Administrator/themsanpham', [
     AdminController::class, 'themsanpham'
 ]);
 Route::post('/Administrator/themsanpham', [
     AdminController::class, 'nutThemSanPham'
 ]);
-
+Route::post('/Administrator/suamdm', [
+    AdminController::class, 'suamdm'
+]);
+Route::get('/Administrator/{id}&sua', [
+    AdminController::class, 'store'
+]);
 
 //---------
 
@@ -102,4 +107,3 @@ Route::get('/Administrator/{id}', [
 Route::put('/Administrator/{id}', [
     AdminController::class, 'update'
 ]);
-

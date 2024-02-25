@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sanpham', function (Blueprint $table) {
             $table->integer('id')->autoIncrement();
-            $table->integer('tensanpham');
+            $table->string('tensanpham');
             $table->integer('gia');
             $table->string('hinh');
             $table->longText('mota');
