@@ -157,6 +157,7 @@ class AdminController extends Controller
 
                     return redirect()->intended('/Administrator');
                 }
+
                 if ($parts[1] === 'suadm') {
 
                     $danhmuc = DanhMuc::where('id', $parts[0])->first();
@@ -187,6 +188,16 @@ class AdminController extends Controller
                         'ttnguoidung' =>   Auth::guard('api')->user(),
                         'sanpham' => $sanpham,
                         'danhmuc' => DanhMuc::all()
+                    ]);
+                }
+                if ($parts[0] === 'xoasanpham') {
+                    $sanpham = SanPham::where('id', $parts[1])
+                        ->delete();
+
+                    return view('Auth.qlsanpham.sanpham', [
+                        'ttnguoidung' =>   Auth::guard('api')->user(),
+                        'sanpham' => SanPham::all(),
+                            
                     ]);
                 }
             }
@@ -399,7 +410,46 @@ class AdminController extends Controller
             'txtslton' => 'required',
             'txtdaban' => 'required',
         ]);
+        if ($request->file('txthinh') != null) {
+
+            $generatedimage = 'image' . time() . '-' . $request->file('txthinh')->getClientOriginalName();
+            $request->file('txthinh')->move(public_path('images'), $generatedimage);
+            $sanpham = SanPham::where('id', $request->input('idsanpham'))
+                ->update([
+                    'tensanpham' => $request->input('txttensp'),
+                    'gia' => $request->input('txtgia'),
+                    'hinh' => $generatedimage,
+                    'mota' => $request->input('txtmota'),
+                    'soluongton' => $request->input('txtslton'),
+                    'soluongdaban' => $request->input('txtdaban'),
+
+                ]);
+                return view('Auth.qlsanpham.sanpham', [
+                    'ttnguoidung' =>   Auth::guard('api')->user(),
+                    'sanpham' => SanPham::all(),
+                    
+                ]);
+        } else {
+            $sanpham = SanPham::where('id', $request->input('iddanhmuc'))
+                ->update([
+                    'tensanpham' => $request->input('txttensp'),
+                    'gia' => $request->input('txtgia'),                 
+                    'mota' => $request->input('txtmota'),
+                    'soluongton' => $request->input('txtslton'),
+                    'soluongdaban' => $request->input('txtdaban'),
+                ]);
+                return view('Auth.qlsanpham.sanpham', [
+                    'ttnguoidung' =>   Auth::guard('api')->user(),
+                    'sanpham' => SanPham::all(),
+                
+                ]);
+        }
+
     }
+
+
+    
+
 
 
     /**

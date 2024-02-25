@@ -31,7 +31,7 @@
 								<a class="btn btn-warning" href="/Administrator/suasanpham&{{ $sp['id'] }}">Sửa</a>
 							</td>
 							<td>
-								<a class="btn btn-danger" href="#">Xóa</a>
+								<a class="btn btn-danger" href="/Administrator/xoasanpham&{{ $sp['id'] }}">Xóa</a>
 							</td>
 						<tr>
 						<?php 
