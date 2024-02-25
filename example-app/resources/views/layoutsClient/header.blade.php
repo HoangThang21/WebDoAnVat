@@ -32,7 +32,7 @@
                     <a href="shop" class="nav-item nav-link">Cửa hàng</a>
                     <a href="shop-detail" class="nav-item nav-link">Thông tin cửa hàng</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Xem thêm</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Xem thêm</a>
                         <div class="dropdown-menu m-0 bg-secondary rounded-0">
                            
                             <a href="checkout" class="dropdown-item">Thanh toán</a>

@@ -16,6 +16,7 @@
                       <th>Đánh giá</th>
                       <th>Số lượng tồn</th>
 					  <th>Đã bán</th>
+					  <th>Chức năng</th>
 					</tr>
                     
 					<?php foreach ($sanpham as $sp): ?>
@@ -27,12 +28,14 @@
 							<td>{{ $sp['danhgia'] }}</td>
 							<td>{{ $sp['soluongton'] }}</td>
 							<td>{{ $sp['soluongdaban'] }}</td>
-							<td>
+							{{-- <td>
 								<a class="btn btn-warning" href="/Administrator/suasanpham&{{ $sp['id'] }}">Sửa</a>
 							</td>
 							<td>
 								<a class="btn btn-danger" href="/Administrator/xoasanpham&{{ $sp['id'] }}">Xóa</a>
-							</td>
+							</td> --}}
+							<td><a href="/Administrator/suasanpham&{{ $sp['id'] }}"><i class="bi bi-pencil bi-lg"></i> </a>|
+							<a href="/Administrator/xoasanpham&{{ $sp['id'] }}"><i class="bi bi-trash bi-xl"></i></a></td></tr>';
 						<tr>
 						<?php 
 					endforeach; ?>
