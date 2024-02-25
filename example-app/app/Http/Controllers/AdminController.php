@@ -265,22 +265,25 @@ class AdminController extends Controller
     {
         return view('Auth.qlsanpham.sanpham', [
             'ttnguoidung' =>   Auth::guard('api')->user(),
-            'sanpham' => SanPham::all()
+            'sanpham' => SanPham::all(),
+            
         ]);
     }
 
     public function themsanpham() {
         return view('Auth.qlsanpham.themsanpham', [
-            'ttnguoidung' => Auth::guard('api')->user()
+            'ttnguoidung' => Auth::guard('api')->user(),
+            'danhmuc' => DanhMuc::all()
         ]);
     }
     public function nutThemSanPham(Request $request) {
         $request->validate([
-            'txttensp' => ['required'],
-            'txtgia' => ['required'],
+            'txttensp' => 'required',
+            'txtgia' => 'required',
             'txthinh' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'txtslton' => ['required'],
-            'txtdaban' => ['required'],
+            'optdanhmuc' => 'required',
+            'txtslton' => 'required',
+            'txtdaban' => 'required',
         ]);
 
         $hinh = 'img' . time() . '-' . $request->file('txthinh')->getClientOriginalName();
@@ -292,10 +295,15 @@ class AdminController extends Controller
         $sanpham->hinh = $hinh;
         $sanpham->mota = $request->input('txtmota');
         $sanpham->danhgia = 0;
+        $sanpham->id_danhmuc = $request->input('optdanhmuc');
         $sanpham->soluongton = $request->input('txtslton');
         $sanpham->soluongdaban = $request->input('txtdaban');
         $sanpham->save();
-        return redirect()->intended('/Administrator');
+        return view('Auth.qlsanpham.sanpham', [
+            'ttnguoidung' =>   Auth::guard('api')->user(),
+            'sanpham' => SanPham::all(),
+            
+        ]);
     }
 
     /**

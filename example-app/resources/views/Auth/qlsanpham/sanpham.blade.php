@@ -19,10 +19,15 @@
 					</tr>
                     
 					<?php foreach ($sanpham as $sp): ?>
-					  <tr><td>{{  $sp["tendanhmuc"] }}</td>
-						  <td><img src="../../img/{{ $sp['hinh'] }}" width="80" class="img-thumbnail"></td>
-						  <td>{{ $sp['name'] }}</td>
-						<td>
+					  	<tr>
+							<td>{{  $sp["tensanpham"] }}</td>
+							<td>{{ $sp['gia'] }}</td>
+							<td><img src="../../img/{{ $sp['hinh'] }}" width="80" class="img-thumbnail"></td>
+							<td>{{ $sp['mota'] }}</td>
+							<td>{{ $sp['danhgia'] }}</td>
+							<td>{{ $sp['soluongton'] }}</td>
+							<td>{{ $sp['soluongdaban'] }}</td>
+						<tr>
 						<?php 
 					endforeach; ?>
 				</table>

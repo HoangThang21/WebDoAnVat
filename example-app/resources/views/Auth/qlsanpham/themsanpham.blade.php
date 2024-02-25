@@ -30,10 +30,10 @@
                 </div> 
 
                 <label>Danh mục</label>
-                <select class="form-control" name="optloaind">                
-                    <option value="1">Quản trị</option>
-                    <option value="2" selected>Thành viên</option>
-                    <option value="3">Khách hàng</option>
+                <select class="form-control" name="optdanhmuc">                
+                   @foreach ($danhmuc as $dm) 
+                   <option value="{{ $dm ['id']}}">{{ $dm ['tendanhmuc'] }}</option>
+                   @endforeach
                 </select></div>
             
                 <div class="my-3">
@@ -43,7 +43,6 @@
               </form>          
             </div>
 
-          </div>
 		@endif
 
 @include('layoutsAdmin.bottom')
