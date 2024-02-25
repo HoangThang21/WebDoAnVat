@@ -7,6 +7,7 @@
                 <form method="post" action="/Administrator/themsanpham" enctype="multipart/form-data" >
                     @csrf
                     {{-- @method('POST') --}}
+                    <input type="hidden" name="idsanpham" value="{{ $sanpham -> id }}">
                     <div class="my-3">
                     <input class="form-control"  value="{{ $sanpham -> tensanpham }}" type="text" name="txttensp" placeholder="Tên sản phẩm" required></div>
                     <div class="my-3">        
@@ -26,7 +27,7 @@
                         <input class="form-control" value="{{ $sanpham -> soluongton }}" type="number" name="txtslton" placeholder="Số lượng tồn" required>
                     </div> 
                     <div class="my-3">        
-                        <input class="form-control" value="{{ $sanpham -> soluongconlai }}" type="number" name="txtdaban" placeholder="Đã bán" required>
+                        <input class="form-control" value="{{ $sanpham -> soluongdaban }}" type="number" name="txtdaban" placeholder="Đã bán" required>
                     </div> 
 
                     <label>Danh mục</label>
@@ -39,7 +40,7 @@
                     <div class="my-3">
                     {{-- <input type="hidden" name="action" value="xlthem" > --}}
                     <input class="btn btn-primary"  type="submit" value="OK">
-                    <input class="btn btn-warning"  type="reset" value="Hủy"></div>
+                    <a class="btn btn-warning" href="/Administrator/qlsanpham">Hủy</a>
                 </form>          
                 </div>
 
