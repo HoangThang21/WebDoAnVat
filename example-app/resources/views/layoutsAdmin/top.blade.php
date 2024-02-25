@@ -44,9 +44,9 @@
 						</a>
 					</li>
 
-					<li class="sidebar-item ">
-						<a class="sidebar-link" href="#">
-						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý mặt hàng</span>
+					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"qlsanpham") != false) echo "active"; ?>">
+						<a class="sidebar-link" href="/Administrator/qlsanpham">
+						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý sản phẩm</span>
 						</a>
 					</li>
 					<li class="sidebar-item ">

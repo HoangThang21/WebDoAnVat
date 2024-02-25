@@ -74,6 +74,21 @@ Route::get('/Administrator/qldanhmuc', [
     AdminController::class, 'qldanhmuc'
 ]);
 
+//SAN PHAM
+Route::get('/Administrator/qlsanpham',[
+    AdminController::class, 'qlsanpham'
+]);
+
+Route::get('/Administrator/themsanpham',[
+    AdminController::class, 'themsanpham'
+]);
+Route::post('/Administrator/themsanpham', [
+    AdminController::class, 'nutThemSanPham'
+]);
+
+
+//---------
+
 Route::get('/Administrator/{id}', [
     AdminController::class, 'store'
 ]);
@@ -81,3 +96,5 @@ Route::get('/Administrator/{id}', [
 Route::put('/Administrator/{id}', [
     AdminController::class, 'update'
 ]);
+
+

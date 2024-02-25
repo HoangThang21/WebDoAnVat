@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Diablu music</title>
+    <title>Food</title>
     <link href="../../inc/css/app.css" rel="stylesheet">
 	<link rel="shortcut icon" href="../../images/iconlogoweb.png" type="image/png">
 	{{-- <script src="../../inc/js/app.js"></script> --}}
