@@ -10,16 +10,16 @@
 					  <tr>
 					  <th>Tên</th>
 					  <th>Hình</th>
-					  
+                      <th>Chức năng</th>
 					</tr>
 					<?php foreach ($danhmuc as $dm): ?>
 					  <tr><td>{{  $dm["tendanhmuc"] }}</td>
 						  <td><img src="../../img/{{ $dm['hinh'] }}" width="80" class="img-thumbnail"></td>
-						  <td>{{ $dm['name'] }}</td>
-						<td>
-
 						<?php 
+                         echo ' <td><a href="/Administrator/"><i class="bi bi-pencil bi-lg"></i> </a>|
+                    <a href="/Administrator"><i class="bi bi-trash bi-xl"></i></a></td></tr>';
 					endforeach; ?>
+                    
 				</table>
 			  
 	

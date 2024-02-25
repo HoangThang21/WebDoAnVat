@@ -69,9 +69,15 @@ Route::get('/Administrator/hoso', [
 Route::post('/Administrator/doimatkhau', [
     AdminController::class, 'doimk'
 ]);
-
+//Quan ly danh muc
 Route::get('/Administrator/qldanhmuc', [
     AdminController::class, 'qldanhmuc'
+]);
+Route::get('/Administrator/themdanhmuc', [
+    AdminController::class, 'themdanhmuc'
+]);
+Route::post('/Administrator/themdm', [
+    AdminController::class, 'themdm'
 ]);
 
 Route::get('/Administrator/{id}', [

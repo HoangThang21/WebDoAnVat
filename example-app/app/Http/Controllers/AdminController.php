@@ -105,6 +105,26 @@ class AdminController extends Controller
         $user->save();
         return redirect()->intended('/Administrator');
     }
+    public function themdm(Request $request)
+    {
+        $request->validate([
+
+            'txttendanhmuc' => ['required'],
+            'txthinh' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+        ]);
+        $generatedimage = 'img' . time() . '-' . $request->file('txthinh')->getClientOriginalName();
+        $request->file('txthinh')->move(public_path('img'), $generatedimage);
+        $danhmuc = new DanhMuc();
+        $danhmuc->tendanhmuc = $request->input('txttendanhmuc');
+        $danhmuc->hinh = $generatedimage;
+        $danhmuc->save();
+        return view('Auth.qldanhmuc.listdanhmuc', [
+            'ttnguoidung' =>   Auth::guard('api')->user(),
+            'danhmuc' => DanhMuc::all(),
+
+        ]);
+    }
     public function logoutadmin()
     {
         Auth::guard('api')->logout();
@@ -178,6 +198,14 @@ class AdminController extends Controller
     public function qldanhmuc()
     {
         return view('Auth.qldanhmuc.listdanhmuc', [
+            'ttnguoidung' =>   Auth::guard('api')->user(),
+            'danhmuc' => DanhMuc::all(),
+
+        ]);
+    }
+    public function themdanhmuc()
+    {
+        return view('Auth.qldanhmuc.themdanhmuc', [
             'ttnguoidung' =>   Auth::guard('api')->user(),
             'danhmuc' => DanhMuc::all(),
 
