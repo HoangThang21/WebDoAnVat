@@ -97,6 +97,9 @@ Route::post('/Administrator/suamdm', [
 Route::get('/Administrator/{id}&sua', [
     AdminController::class, 'store'
 ]);
+Route::get('/Administrator/{id}&xoa', [
+    AdminController::class, 'destroy'
+]);
 Route::get('/Administrator/susanpham&{id}', [
     AdminController::class, 'suasanpham'
 ]);
