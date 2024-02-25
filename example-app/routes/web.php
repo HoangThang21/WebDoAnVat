@@ -69,9 +69,15 @@ Route::get('/Administrator/hoso', [
 Route::post('/Administrator/doimatkhau', [
     AdminController::class, 'doimk'
 ]);
+
+Route::get('/Administrator/qldanhmuc', [
+    AdminController::class, 'qldanhmuc'
+]);
+
 Route::get('/Administrator/{id}', [
     AdminController::class, 'store'
 ]);
+
 Route::put('/Administrator/{id}', [
     AdminController::class, 'update'
 ]);

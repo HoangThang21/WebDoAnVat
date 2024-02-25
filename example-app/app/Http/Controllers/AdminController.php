@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DanhMuc;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -171,6 +172,14 @@ class AdminController extends Controller
     {
         return view('Auth.qlnguoidung.profile', [
             'ttnguoidung' =>   Auth::guard('api')->user(),
+
+        ]);
+    }
+    public function qldanhmuc()
+    {
+        return view('Auth.qldanhmuc.listdanhmuc', [
+            'ttnguoidung' =>   Auth::guard('api')->user(),
+            'danhmuc' => DanhMuc::all(),
 
         ]);
     }

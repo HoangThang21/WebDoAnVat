@@ -27,19 +27,19 @@
 					</li>
 
 					<li class="sidebar-item" >
-						<a class="sidebar-link" href="">
+						<a class="sidebar-link" href="/Administrator">
 						<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Bảng điều khiển</span>
 						</a>
 					</li>
 					
-				
+					
 
 					<li class="sidebar-header text-info">
 						DANH MỤC
 					</li>
 
-					<li class="sidebar-item ">
-						<a class="sidebar-link " href="#">
+					<li class="sidebar-item <?php if(strpos($_SERVER['REQUEST_URI'],"qldanhmuc") != false) echo "active"; ?>">
+						<a class="sidebar-link " href="/Administrator/qldanhmuc">
 						<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Quản lý danh mục</span>
 						</a>
 					</li>
