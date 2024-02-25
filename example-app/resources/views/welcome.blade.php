@@ -1,2 +1,2 @@
-@include('layouts.top')
-@include('layouts.bottom')
+@include('layoutsClient.top')
+@include('layoutsClient.bottom')

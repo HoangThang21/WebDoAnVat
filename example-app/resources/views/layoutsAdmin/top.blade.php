@@ -187,9 +187,9 @@
 							</a>
 							
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-								hello
-								{{-- @if( Auth::guard('web')->check())
-								<img src="../../images/{{  $ttnguoidung->image}}" class="avatar img-fluid rounded me-1" /> 
+								
+								@if( Auth::guard('api')->check())
+								<img src="../../img/{{  $ttnguoidung->image}}" class="avatar img-fluid rounded me-1" /> 
 								<span class="text-dark">Chào 
 									{ 
 										{{ $ttnguoidung->name }}
@@ -199,12 +199,12 @@
 								@else
 								<img src="" class="avatar img-fluid rounded me-1" /> 
 								<span class="text-dark">Chào 
-								@endif --}}
+								@endif
 							</a>
 							
 							<div class="dropdown-menu dropdown-menu-end">
-								dangnhap
-								{{-- @if( Auth::guard('web')->check())
+								
+								@if( Auth::guard('api')->check())
 									<a class="dropdown-item" href="/Administrator/hoso">
 										<i class="align-middle me-1" data-feather="user"></i> Hồ sơ cá nhân
 									</a>								
@@ -213,12 +213,12 @@
 									</a>
 									
 									<div class="dropdown-divider"></div>
-									<a class="dropdown-item" href="{{ route('logoutadmin') }}"><i class="align-middle me-1" data-feather="log-out"></i> Đăng xuất</a>
+									<a class="dropdown-item" href="/Administrator/logoutadmin"><i class="align-middle me-1" data-feather="log-out"></i> Đăng xuất</a>
 								@else
 									<a class="dropdown-item" href="/Administrator/login">
 										<i class="align-middle me-1" data-feather="log-in"></i> Đăng nhập
 									</a>
-								@endif --}}
+								@endif
 								
 								
 							</div>

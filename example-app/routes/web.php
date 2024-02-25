@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +33,45 @@ Route::get('/shop', function () {
 Route::get('/shop-detail', function () {
     return view('Client.shopdetail');
 });
+Route::get('/testimonial', function () {
+    return view('Client.testimonial');
+});
+Route::get('/checkout', function () {
+    return view('Client.checkout');
+});
+
+//----------------------------------------------------------------------
+//ADMIN
+Route::get('/{name}', [
+    AdminController::class, 'index'
+]);
+Route::get('/Administrator/login', [
+    AdminController::class, 'login'
+]);
+Route::post('/Administrator', [
+    AdminController::class, 'loginuser'
+]);
+Route::post('/Administrator/themnd', [
+    AdminController::class, 'themnd'
+]);
+Route::get('/Administrator/themnguoidung', [
+    AdminController::class, 'themnguoidung'
+]);
+Route::get('/Administrator/logoutadmin', [
+    AdminController::class, 'logoutadmin'
+]);
+Route::get('/Administrator/doimatkhau', [
+    AdminController::class, 'doimatkhau'
+]);
+Route::get('/Administrator/hoso', [
+    AdminController::class, 'hoso'
+]);
+Route::post('/Administrator/doimatkhau', [
+    AdminController::class, 'doimk'
+]);
+Route::get('/Administrator/{id}', [
+    AdminController::class, 'store'
+]);
+Route::put('/Administrator/{id}', [
+    AdminController::class, 'update'
+]);
