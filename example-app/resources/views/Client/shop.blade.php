@@ -24,11 +24,10 @@
 
     <!-- Single Page Header start -->
     <div class="container-fluid page-header py-5">
-        <h1 class="text-center text-white display-6">Shop</h1>
+        <h1 class="text-center text-white display-6">Cửa hàng</h1>
         <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-            <li class="breadcrumb-item active text-white">Shop</li>
+            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+            <li class="breadcrumb-item active text-white">Cửa hàng</li>
         </ol>
     </div>
     <!-- Single Page Header End -->
@@ -37,13 +36,13 @@
     <!-- Fruits Shop Start-->
     <div class="container-fluid fruite py-5">
         <div class="container py-5">
-            <h1 class="mb-4">Fresh fruits shop</h1>
+            <h1 class="mb-4">Cửa hàng đồ ăn vặt</h1>
             <div class="row g-4">
                 <div class="col-lg-12">
                     <div class="row g-4">
                         <div class="col-xl-3">
                             <div class="input-group w-100 mx-auto d-flex">
-                                <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                                <input type="search" class="form-control p-3" placeholder="Tìm kiếm bằng từ khóa" aria-describedby="search-icon-1">
                                 <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
                             </div>
                         </div>
