@@ -137,7 +137,7 @@ class AdminController extends Controller
      */
     public function store(string $id, Request $request)
     {
-
+              
         if (strpos($id, '&') !== false) {
             $parts = explode('&', $id);
             if (count($parts) == 3 && is_numeric($parts[0]) && is_numeric($parts[1]) && is_string($parts[2])) {
@@ -166,6 +166,18 @@ class AdminController extends Controller
                         'danhmuc' => $danhmuc,
 
                     ]);
+                }
+            }
+            
+            if (count($parts) == 2 && is_numeric($parts[1]) && is_string($parts[0])) {
+                if ($parts[0] == 'suasanpham') {
+                    $sanpham = SanPham::where('id', $parts[1])
+                        ->first();
+                        return view('Auth.qlsanpham.suasanpham', [
+                            'ttnguoidung' =>   Auth::guard('api')->user(),
+                            'sanpham' => $sanpham,
+                            'danhmuc' => DanhMuc::all()      
+                        ]);                          
                 }
             }
         }
@@ -302,7 +314,6 @@ class AdminController extends Controller
             }
 
 
-
             return redirect()->intended('/Administrator/hoso');
         }
     }
@@ -311,24 +322,27 @@ class AdminController extends Controller
     {
         return view('Auth.qlsanpham.sanpham', [
             'ttnguoidung' =>   Auth::guard('api')->user(),
-            'sanpham' => SanPham::all()
+            'sanpham' => SanPham::all(),
+            
         ]);
     }
 
     public function themsanpham()
     {
         return view('Auth.qlsanpham.themsanpham', [
-            'ttnguoidung' => Auth::guard('api')->user()
+            'ttnguoidung' => Auth::guard('api')->user(),
+            'danhmuc' => DanhMuc::all()
         ]);
     }
     public function nutThemSanPham(Request $request)
     {
         $request->validate([
-            'txttensp' => ['required'],
-            'txtgia' => ['required'],
+            'txttensp' => 'required',
+            'txtgia' => 'required',
             'txthinh' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'txtslton' => ['required'],
-            'txtdaban' => ['required'],
+            'optdanhmuc' => 'required',
+            'txtslton' => 'required',
+            'txtdaban' => 'required',
         ]);
 
         $hinh = 'img' . time() . '-' . $request->file('txthinh')->getClientOriginalName();
@@ -340,11 +354,41 @@ class AdminController extends Controller
         $sanpham->hinh = $hinh;
         $sanpham->mota = $request->input('txtmota');
         $sanpham->danhgia = 0;
+        $sanpham->id_danhmuc = $request->input('optdanhmuc');
         $sanpham->soluongton = $request->input('txtslton');
         $sanpham->soluongdaban = $request->input('txtdaban');
         $sanpham->save();
-        return redirect()->intended('/Administrator');
+        return view('Auth.qlsanpham.sanpham', [
+            'ttnguoidung' =>   Auth::guard('api')->user(),
+            'sanpham' => SanPham::all(),
+            
+        ]);
     }
+
+    public function suasanpham(string $id) {
+        if (strpos($id, '&') !== false) {
+            $parts = explode('&', $id);         
+            if (count($parts) == 2 && is_numeric($parts[1]) && is_string($parts[0])) {
+                if ($parts[0] == 'suasanpham') {
+                    $sanpham = SanPham::where('id', $parts[1])
+                        ->get();
+                    return redirect()->intended('/Administrator/qlsanpham');
+                }
+            }
+        }
+    }
+    
+    public function nutSuaSanPham(Request $request) {
+        $request->validate([
+            'txttensp' => 'required',
+            'txtgia' => 'required',
+            'txthinh' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'optdanhmuc' => 'required',
+            'txtslton' => 'required',
+            'txtdaban' => 'required',
+        ]);
+    }
+
 
     /**
      * Remove the specified resource from storage.

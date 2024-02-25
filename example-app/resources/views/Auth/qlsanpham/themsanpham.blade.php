@@ -30,20 +30,21 @@
                 </div> 
 
                 <label>Danh mục</label>
-                <select class="form-control" name="optloaind">                
-                    <option value="1">Quản trị</option>
-                    <option value="2" selected>Thành viên</option>
-                    <option value="3">Khách hàng</option>
+                <select class="form-control" name="optdanhmuc">                
+                   @foreach ($danhmuc as $dm) 
+                   <option value="{{ $dm ['id']}}">{{ $dm ['tendanhmuc'] }}</option>
+                   @endforeach
                 </select></div>
             
                 <div class="my-3">
                 {{-- <input type="hidden" name="action" value="xlthem" > --}}
-                <input class="btn btn-primary"  type="submit" value="Thêm">
-                <input class="btn btn-warning"  type="reset" value="Hủy"></div>
+                {{-- <input class="btn btn-primary"  type="submit" value="Thêm"> --}}
+                {{-- <input class="btn btn-warning"  type="reset" value="Hủy"></div> --}}
+                <a class="btn btn-primary" href="/Administrator/qlsanpham">Thêm</a>
+                <a class="btn btn-warning" href="/Administrator/qlsanpham">Hủy</a>
               </form>          
             </div>
 
-          </div>
 		@endif
 
 @include('layoutsAdmin.bottom')
