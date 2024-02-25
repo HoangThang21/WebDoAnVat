@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
 use App\Models\DanhMuc;
 use App\Models\SanPham;
 use App\Models\User;
@@ -197,7 +198,7 @@ class AdminController extends Controller
                     return view('Auth.qlsanpham.sanpham', [
                         'ttnguoidung' =>   Auth::guard('api')->user(),
                         'sanpham' => SanPham::all(),
-                            
+
                     ]);
                 }
             }
@@ -239,11 +240,21 @@ class AdminController extends Controller
 
         ]);
     }
+    public function qlthanhtoan()
+    {
+        return view('Auth.qlnguoidung.profile', [
+            'ttnguoidung' =>   Auth::guard('api')->user(),
+
+        ]);
+    }
     public function qldanhmuc()
     {
-        return view('Auth.qldanhmuc.listdanhmuc', [
+        return view('Auth.qlcart.listthanhtoan', [
             'ttnguoidung' =>   Auth::guard('api')->user(),
+            'user'=>User::all(),
+            'sanpham'=>SanPham::all(),
             'danhmuc' => DanhMuc::all(),
+            'cart' => Cart::all(),
 
         ]);
     }
@@ -424,31 +435,30 @@ class AdminController extends Controller
                     'soluongdaban' => $request->input('txtdaban'),
 
                 ]);
-                return view('Auth.qlsanpham.sanpham', [
-                    'ttnguoidung' =>   Auth::guard('api')->user(),
-                    'sanpham' => SanPham::all(),
-                    
-                ]);
+            return view('Auth.qlsanpham.sanpham', [
+                'ttnguoidung' =>   Auth::guard('api')->user(),
+                'sanpham' => SanPham::all(),
+
+            ]);
         } else {
             $sanpham = SanPham::where('id', $request->input('iddanhmuc'))
                 ->update([
                     'tensanpham' => $request->input('txttensp'),
-                    'gia' => $request->input('txtgia'),                 
+                    'gia' => $request->input('txtgia'),
                     'mota' => $request->input('txtmota'),
                     'soluongton' => $request->input('txtslton'),
                     'soluongdaban' => $request->input('txtdaban'),
                 ]);
-                return view('Auth.qlsanpham.sanpham', [
-                    'ttnguoidung' =>   Auth::guard('api')->user(),
-                    'sanpham' => SanPham::all(),
-                
-                ]);
-        }
+            return view('Auth.qlsanpham.sanpham', [
+                'ttnguoidung' =>   Auth::guard('api')->user(),
+                'sanpham' => SanPham::all(),
 
+            ]);
+        }
     }
 
 
-    
+
 
 
 
