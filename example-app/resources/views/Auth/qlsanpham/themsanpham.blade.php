@@ -38,8 +38,10 @@
             
                 <div class="my-3">
                 {{-- <input type="hidden" name="action" value="xlthem" > --}}
-                <input class="btn btn-primary"  type="submit" value="Thêm">
-                <input class="btn btn-warning"  type="reset" value="Hủy"></div>
+                {{-- <input class="btn btn-primary"  type="submit" value="Thêm"> --}}
+                {{-- <input class="btn btn-warning"  type="reset" value="Hủy"></div> --}}
+                <a class="btn btn-primary" href="/Administrator/qlsanpham">Thêm</a>
+                <a class="btn btn-warning" href="/Administrator/qlsanpham">Hủy</a>
               </form>          
             </div>
 

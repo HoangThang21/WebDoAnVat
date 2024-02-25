@@ -137,7 +137,7 @@ class AdminController extends Controller
      */
     public function store(string $id, Request $request)
     {
-
+              
         if (strpos($id, '&') !== false) {
             $parts = explode('&', $id);
             if (count($parts) == 3 && is_numeric($parts[0]) && is_numeric($parts[1]) && is_string($parts[2])) {
@@ -156,6 +156,18 @@ class AdminController extends Controller
                         ->delete();
 
                     return redirect()->intended('/Administrator');
+                }
+            }
+            
+            if (count($parts) == 2 && is_numeric($parts[1]) && is_string($parts[0])) {
+                if ($parts[0] == 'suasanpham') {
+                    $sanpham = SanPham::where('id', $parts[1])
+                        ->first();
+                        return view('Auth.qlsanpham.suasanpham', [
+                            'ttnguoidung' =>   Auth::guard('api')->user(),
+                            'sanpham' => $sanpham,
+                            'danhmuc' => DanhMuc::all()      
+                        ]);                          
                 }
             }
         }
@@ -256,7 +268,6 @@ class AdminController extends Controller
             }
 
 
-
             return redirect()->intended('/Administrator/hoso');
         }
     }
@@ -305,6 +316,31 @@ class AdminController extends Controller
             
         ]);
     }
+
+    public function suasanpham(string $id) {
+        if (strpos($id, '&') !== false) {
+            $parts = explode('&', $id);         
+            if (count($parts) == 2 && is_numeric($parts[1]) && is_string($parts[0])) {
+                if ($parts[0] == 'suasanpham') {
+                    $sanpham = SanPham::where('id', $parts[1])
+                        ->get();
+                    return redirect()->intended('/Administrator/qlsanpham');
+                }
+            }
+        }
+    }
+    
+    public function nutSuaSanPham(Request $request) {
+        $request->validate([
+            'txttensp' => 'required',
+            'txtgia' => 'required',
+            'txthinh' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'optdanhmuc' => 'required',
+            'txtslton' => 'required',
+            'txtdaban' => 'required',
+        ]);
+    }
+
 
     /**
      * Remove the specified resource from storage.

@@ -27,6 +27,12 @@
 							<td>{{ $sp['danhgia'] }}</td>
 							<td>{{ $sp['soluongton'] }}</td>
 							<td>{{ $sp['soluongdaban'] }}</td>
+							<td>
+								<a class="btn btn-warning" href="/Administrator/suasanpham&{{ $sp['id'] }}">Sửa</a>
+							</td>
+							<td>
+								<a class="btn btn-danger" href="#">Xóa</a>
+							</td>
 						<tr>
 						<?php 
 					endforeach; ?>

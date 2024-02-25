@@ -91,7 +91,9 @@ Route::get('/Administrator/themsanpham',[
 Route::post('/Administrator/themsanpham', [
     AdminController::class, 'nutThemSanPham'
 ]);
-
+Route::get('/Administrator/susanpham&{id}', [
+    AdminController::class, 'suasanpham'
+]);
 
 //---------
 
