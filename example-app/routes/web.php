@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 use Stichoza\GoogleTranslate\GoogleTranslate;
 
@@ -17,10 +18,10 @@ use function Ramsey\Uuid\v1;
 |
 */
 //php artisan serve
-Route::get('/translate',function(){
-    $lang = new GoogleTranslate('en');
-    return $lang->setSource('en')->setTarget('vi')->translate("Hello World");
-});
+
+Route::get('/translate', [
+    MainController::class, 'index'
+]);
 Route::get('/', function () {
     return view('Client.index');
 });
@@ -127,4 +128,3 @@ Route::get('/Administrator/{id}', [
 Route::put('/Administrator/{id}', [
     AdminController::class, 'update'
 ]);
-

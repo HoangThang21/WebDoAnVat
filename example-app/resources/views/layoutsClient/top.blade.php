@@ -40,6 +40,7 @@
 </head>
 
 <body>
+
     <!-- Spinner Start -->
     <div id="spinner"
         class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
@@ -55,8 +56,16 @@
                 <div class="top-info ps-2">
                     <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#"
                             class="text-dark">Hà Hoàng Hổ, Long Xuyên, An Giang</a></small>
+                    {{-- <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#"
+                            class="text-dark">nhom_2@gmail.com</a></small> --}}
                     <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#"
-                            class="text-dark">nhom_2@gmail.com</a></small>
+                            class="text-dark">
+                            @foreach ($lang as $key => $value)
+                                @if ($key == 'helo')
+                                    {{ $value }}
+                                @endif
+                            @endforeach
+                        </a></small>
                 </div>
                 <div class="top-link pe-2">
                     <a href="#" class="text-white"><small class="text-dark mx-2">Privacy Policy</small>/</a>
