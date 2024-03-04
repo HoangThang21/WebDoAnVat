@@ -50,9 +50,9 @@
 
 
     <!-- Navbar start -->
-    
-                    
-    
+
+
+
     <div class="container-fluid fixed-top">
         <div class="container topbar  d-none d-lg-block" style="background-color: #FEF889;">
             <div class="d-flex justify-content-between">
@@ -63,13 +63,16 @@
                             class="text-dark">nhom_2@gmail.com</a></small> --}}
                     <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#"
                             class="text-dark">
-                           
+
                         </a></small>
                 </div>
                 <div class="top-link pe-2">
-                    <a href="#" class="text-white"><small class="text-dark mx-2">{{ GoogleTranslate::trans('Privacy Policy', app()->getLocale()) }}</small>/</a>
-                    <a href="#" class="text-white"><small class="text-dark mx-2">{{ GoogleTranslate::trans('Terms of Use', app()->getLocale()) }}</small>/</a>
-                    <a href="#" class="text-white"><small class="text-dark ms-2">{{ GoogleTranslate::trans('Sales and Refunds', app()->getLocale()) }}</small></a>
+                    <a href="#" class="text-white"><small
+                            class="text-dark mx-2">{{ GoogleTranslate::trans('Privacy Policy', app()->getLocale()) }}</small>/</a>
+                    <a href="#" class="text-white"><small
+                            class="text-dark mx-2">{{ GoogleTranslate::trans('Terms of Use', app()->getLocale()) }}</small>/</a>
+                    <a href="#" class="text-white"><small
+                            class="text-dark ms-2">{{ GoogleTranslate::trans('Sales and Refunds', app()->getLocale()) }}</small></a>
                 </div>
             </div>
         </div>
@@ -132,12 +135,15 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body d-flex align-items-center">
-                    <div class="input-group w-75 mx-auto d-flex">
-                        <input type="search" class="form-control p-3" placeholder="Nhập từ khóa"
-                            aria-describedby="search-icon-1">
-                        <span id="search-icon-1 " class="input-group-text p-3 icon_search"><i
-                                class="fa fa-search"></i></span>
-                    </div>
+                    <form action="/search" method="post">
+                        <div class="input-group w-75 mx-auto d-flex">
+                            <input type="search" name='txtsearch' class="form-control p-3"
+                                placeholder="Nhập từ khóa" aria-describedby="search-icon-1">
+                            <span id="search-icon-1 " class="input-group-text p-3 icon_search"><i
+                                    class="fa fa-search"></i></span>
+                        </div>
+                    </form>
+
                 </div>
             </div>
         </div>
