@@ -130,5 +130,5 @@ Route::put('/Administrator/{id}', [
     AdminController::class, 'update'
 ]);
 
-Route::get('/index/home', [LangController::class, 'index']);
-Route::get('/index/change', [LangController::class, 'change'])->name('changeLang');
+Route::get('/lang/home', [LangController::class, 'index']);
+Route::get('/lang/change', [LangController::class, 'change'])->name('changeLang');
