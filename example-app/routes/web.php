@@ -15,7 +15,7 @@ use Stichoza\GoogleTranslate\GoogleTranslate;
 |
 */
 //php artisan serve
-Route::get('translate',function(){
+Route::get('/translate',function(){
     $lang = new GoogleTranslate('en');
     return $lang->setSource('en')->setTarget('vi')->translate("Hello World");
 });
