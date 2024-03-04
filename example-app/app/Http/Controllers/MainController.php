@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class MainController extends Controller
 {
@@ -11,7 +12,10 @@ class MainController extends Controller
      */
     public function index()
     {
-        //
+
+        $lang = app()->call([LangController::class, 'langen_vi']);
+        // dd($lang);
+        return view('Client.index', ['lang' => $lang]);
     }
 
     /**

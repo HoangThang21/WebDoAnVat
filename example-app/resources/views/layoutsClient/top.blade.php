@@ -40,6 +40,7 @@
 </head>
 
 <body>
+
     <!-- Spinner Start -->
     <div id="spinner"
         class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
@@ -49,19 +50,26 @@
 
 
     <!-- Navbar start -->
+    
+                    
+    
     <div class="container-fluid fixed-top">
         <div class="container topbar  d-none d-lg-block" style="background-color: #FEF889;">
             <div class="d-flex justify-content-between">
                 <div class="top-info ps-2">
                     <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#"
                             class="text-dark">Hà Hoàng Hổ, Long Xuyên, An Giang</a></small>
+                    {{-- <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#"
+                            class="text-dark">nhom_2@gmail.com</a></small> --}}
                     <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#"
-                            class="text-dark">nhom_2@gmail.com</a></small>
+                            class="text-dark">
+                           
+                        </a></small>
                 </div>
                 <div class="top-link pe-2">
-                    <a href="#" class="text-white"><small class="text-dark mx-2">Privacy Policy</small>/</a>
-                    <a href="#" class="text-white"><small class="text-dark mx-2">Terms of Use</small>/</a>
-                    <a href="#" class="text-white"><small class="text-dark ms-2">Sales and Refunds</small></a>
+                    <a href="#" class="text-white"><small class="text-dark mx-2">{{ GoogleTranslate::trans('Privacy Policy', app()->getLocale()) }}</small>/</a>
+                    <a href="#" class="text-white"><small class="text-dark mx-2">{{ GoogleTranslate::trans('Terms of Use', app()->getLocale()) }}</small>/</a>
+                    <a href="#" class="text-white"><small class="text-dark ms-2">{{ GoogleTranslate::trans('Sales and Refunds', app()->getLocale()) }}</small></a>
                 </div>
             </div>
         </div>

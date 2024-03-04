@@ -8,6 +8,12 @@
         <div class="container-fluid py-5 mb-5 hero-header">
             <div class="container py-5">
                 <div class="row g-5 align-items-center">
+                    <div class="col-md-4">
+                        <select class="form-select changeLang">
+                            <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+                            <option value="vi" {{ session()->get('locale') == 'vi' ? 'selected' : '' }}>Vietnamese</option>
+                        </select>
+                    </div>
                     <div class="col-md-12 col-lg-7">
                         <h4 class="mb-3 text-secondary">100% Thực phẩm sạch</h4>
                         <h1 class="mb-5 display-3 text-dark">Khô gà & Cơm cháy</h1>
@@ -36,7 +42,7 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
-                        </div>
+                        </div>     
                     </div>
                 </div>
             </div>
@@ -999,4 +1005,6 @@
         </div>
         <!-- Tastimonial End -->
 
+        
+       
         @include('layoutsClient.bottom')      
