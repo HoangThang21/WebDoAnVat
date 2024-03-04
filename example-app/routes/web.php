@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
+use function Ramsey\Uuid\v1;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +42,9 @@ Route::get('/checkout', function () {
     return view('Client.checkout');
 });
 
+Route::get('/login', function() {
+    return view('Client.login');
+});
 //----------------------------------------------------------------------
 //ADMIN
 Route::get('/{name}', [
@@ -119,3 +124,4 @@ Route::get('/Administrator/{id}', [
 Route::put('/Administrator/{id}', [
     AdminController::class, 'update'
 ]);
+

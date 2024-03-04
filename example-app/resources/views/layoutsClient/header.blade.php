@@ -5,7 +5,7 @@
 <!-- Spinner End -->
 
 
-<!-- Navbar start -->
+{{-- <!-- Navbar start -->
 <div class="container-fluid fixed-top">
     <div class="container topbar  d-none d-lg-block" style="background-color: #FEF889;">
         <div class="d-flex justify-content-between">
@@ -56,7 +56,7 @@
         </nav>
     </div>
 </div>
-<!-- Navbar End -->
+<!-- Navbar End --> --}}
 
 
 <!-- Modal Search Start -->
