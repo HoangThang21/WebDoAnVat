@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\SanPham;
 use Illuminate\Http\Request;
 use Stichoza\GoogleTranslate\GoogleTranslate;
 
@@ -32,6 +33,11 @@ class MainController extends Controller
     public function store(Request $request)
     {
         //   
+    }
+    public function search(Request $request)
+    {
+        $sanpham = SanPham::where('name', 'like', '%' . $request->input('txtsearch') . '%')->get();
+        return view('Client.shop', ['sanphamsearch' => $sanpham]);
     }
 
     /**

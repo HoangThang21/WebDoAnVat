@@ -47,9 +47,12 @@ Route::get('/checkout', function () {
     return view('Client.checkout');
 });
 
-Route::get('/login', function() {
+Route::get('/login', function () {
     return view('Client.login');
 });
+Route::get('/search', [
+    MainController::class, 'search'
+]);
 Route::get('/register', function() {
     return view('Client.register');
 });
