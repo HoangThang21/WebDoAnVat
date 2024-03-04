@@ -38,9 +38,9 @@
         <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"> --}}
 </head>
-
+                  
 <body>
-
+              ==
     <!-- Spinner Start -->
     <div id="spinner"
         class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
@@ -54,16 +54,14 @@
 
 
     <div class="container-fluid fixed-top">
+        
         <div class="container topbar  d-none d-lg-block" style="background-color: #FEF889;">
             <div class="d-flex justify-content-between">
                 <div class="top-info ps-2">
                     <small class="me-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> <a href="#"
                             class="text-dark">Hà Hoàng Hổ, Long Xuyên, An Giang</a></small>
-                    {{-- <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#"
-                            class="text-dark">nhom_2@gmail.com</a></small> --}}
                     <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#"
-                            class="text-dark">
-
+                            class="text-dark">nhom_2@gmail.com</a></small>
                         </a></small>
                 </div>
                 <div class="top-link pe-2">
@@ -74,8 +72,16 @@
                     <a href="#" class="text-white"><small
                             class="text-dark ms-2">{{ GoogleTranslate::trans('Sales and Refunds', app()->getLocale()) }}</small></a>
                 </div>
+                <div class="ps-2">
+                    <select class="form-select changeLang">
+                        <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+                        <option value="vi" {{ session()->get('locale') == 'vi' ? 'selected' : '' }}>
+                        </option>
+                    </select>
+                </div>
             </div>
         </div>
+        
         <div class="container px-0">
             <nav class="navbar navbar-light bg-white navbar-expand-xl">
                 <a href="/" class="navbar-brand">
