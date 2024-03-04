@@ -53,6 +53,9 @@ Route::get('/login', function () {
 Route::get('/search', [
     MainController::class, 'search'
 ]);
+Route::get('/register', function() {
+    return view('Client.register');
+});
 //----------------------------------------------------------------------
 //ADMIN
 Route::get('/{name}', [
