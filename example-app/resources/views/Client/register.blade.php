@@ -15,6 +15,9 @@
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Mật khẩu</label>
       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Mật khẩu" required>
+
+      <label for="exampleInputPassword1" class="form-label mt-3">Xác nhận mật khẩu</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Xác nhận mật khẩu" required>
     </div>
     <hr>
     <p>Đã có tài khoản?<a href="/register"> <span>Đăng nhập</span></a></p>
