@@ -48,6 +48,9 @@ Route::get('/checkout', function () {
 Route::get('/login', function() {
     return view('Client.login');
 });
+Route::get('/register', function() {
+    return view('Client.register');
+});
 //----------------------------------------------------------------------
 //ADMIN
 Route::get('/{name}', [

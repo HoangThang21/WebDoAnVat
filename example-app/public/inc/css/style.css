@@ -179,6 +179,55 @@
 }
 
 /*** Navbar End ***/
+.login-form {
+    justify-content: center;
+    margin-top: 200px;
+    max-width: max-content;
+    box-shadow: 4px 4px 4px 4px rgb(199, 236, 144);
+    border-radius: 35px;
+    position: absolute ;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    
+}
+
+.login-form h2 {
+    color: white;
+}
+.login-form .form-text {
+    color: white;
+    font-style: italic;
+}
+.login-form span {
+    font-style: italic;
+}
+.login-form span:hover{
+    text-decoration: underline;
+    color: blue;
+}
+.btn-google img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.btn-google:hover{
+    background-color: white;
+}
+.btn-login:hover{
+    background-color: white;
+}
+
+.login-page {
+    position: relative;
+    background: url(../../img/bg.jpg);
+    padding: 20px 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    height: 1000px;
+}
 
 /*** Hero Header ***/
 .hero-header {
