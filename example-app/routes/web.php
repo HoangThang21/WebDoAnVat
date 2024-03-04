@@ -23,6 +23,9 @@ use function Ramsey\Uuid\v1;
 Route::get('/translate', [
     MainController::class, 'index'
 ]);
+Route::post('/search', [
+    MainController::class, 'search'
+]);
 Route::get('/', function () {
     return view('Client.index');
 });
@@ -50,10 +53,8 @@ Route::get('/checkout', function () {
 Route::get('/login', function () {
     return view('Client.login');
 });
-Route::get('/search', [
-    MainController::class, 'search'
-]);
-Route::get('/register', function() {
+
+Route::get('/register', function () {
     return view('Client.register');
 });
 //----------------------------------------------------------------------

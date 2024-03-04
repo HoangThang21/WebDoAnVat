@@ -36,7 +36,8 @@ class MainController extends Controller
     }
     public function search(Request $request)
     {
-        $sanpham = SanPham::where('name', 'like', '%' . $request->input('txtsearch') . '%')->get();
+
+        $sanpham = SanPham::where('tensanpham', 'like', '%' . $request->input('txtsearch') . '%')->get();
         return view('Client.shop', ['sanphamsearch' => $sanpham]);
     }
 

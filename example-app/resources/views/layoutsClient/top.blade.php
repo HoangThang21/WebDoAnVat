@@ -38,9 +38,9 @@
         <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"> --}}
 </head>
-                  
+
 <body>
-              ==
+    ==
     <!-- Spinner Start -->
     <div id="spinner"
         class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
@@ -54,7 +54,7 @@
 
 
     <div class="container-fluid fixed-top">
-        
+
         <div class="container topbar  d-none d-lg-block" style="background-color: #FEF889;">
             <div class="d-flex justify-content-between">
                 <div class="top-info ps-2">
@@ -62,7 +62,7 @@
                             class="text-dark">Hà Hoàng Hổ, Long Xuyên, An Giang</a></small>
                     <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#"
                             class="text-dark">nhom_2@gmail.com</a></small>
-                        </a></small>
+                    </a></small>
                 </div>
                 <div class="top-link pe-2">
                     <a href="#" class="text-white"><small
@@ -81,7 +81,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="container px-0">
             <nav class="navbar navbar-light bg-white navbar-expand-xl">
                 <a href="/" class="navbar-brand">
@@ -141,10 +141,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body d-flex align-items-center">
-                    <form action="/search" method="post">
+                    <form action="/search" method="POST" class="w-100 formsearch" name='formsearch'>
+                        @csrf
                         <div class="input-group w-75 mx-auto d-flex">
-                            <input type="search" name='txtsearch' class="form-control p-3"
+                            <input type="search" name='txtsearch' class="form-control p-3 inputsearch"
                                 placeholder="Nhập từ khóa" aria-describedby="search-icon-1">
+                            {{-- <input type="submit" name="" class="submitsearch" value="ádss"> --}}
                             <span id="search-icon-1 " class="input-group-text p-3 icon_search"><i
                                     class="fa fa-search"></i></span>
                         </div>
