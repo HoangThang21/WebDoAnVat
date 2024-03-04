@@ -107,8 +107,11 @@ Route::get('/Administrator/{id}&sua', [
 Route::get('/Administrator/{id}&xoa', [
     AdminController::class, 'destroy'
 ]);
-Route::get('/Administrator/susanpham&{id}', [
+Route::get('/Administrator/susanpham', [
     AdminController::class, 'suasanpham'
+]);
+Route::post('/Administrator/suasp', [
+    AdminController::class, 'nutSuaSanPham'
 ]);
 
 //---------
