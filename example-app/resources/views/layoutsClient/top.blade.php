@@ -94,19 +94,18 @@
                 </button>
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
-                        <a href="/" class="nav-item nav-link ">Trang chủ</a>
-                        <a href="shop" class="nav-item nav-link ">Cửa hàng</a>
-                        <a href="detailshop" class="nav-item nav-link ">Thông tin cửa hàng</a>
+                        <a href="/" class="nav-item nav-link ">{{ GoogleTranslate::trans('Homepage', app()->getLocale()) }}</a>
+                        <a href="shop" class="nav-item nav-link ">{{ GoogleTranslate::trans('Shop', app()->getLocale()) }}</a>
+                        <a href="detailshop" class="nav-item nav-link ">{{ GoogleTranslate::trans('Shop Detail', app()->getLocale()) }}</a>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Xem thêm</a>
+                            <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">{{ GoogleTranslate::trans('See more', app()->getLocale()) }}</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
-
-                                <a href="checkout" class="dropdown-item">Thanh toán</a>
+                                <a  href="checkout" class="dropdown-item">{{ GoogleTranslate::trans('Checkout', app()->getLocale()) }}</a>
                                 <a href="testimonial" class="dropdown-item">Feedback</a>
                                 <!-- <a href="404.html" class="dropdown-item">404 Page</a> -->
                             </div>
                         </div>
-                        <a href="contact" class="nav-item nav-link">Liên Hệ</a>
+                        <a href="contact" class="nav-item nav-link">{{ GoogleTranslate::trans('Contact', app()->getLocale()) }}</a>
                     </div>
                     <div class="d-flex m-3 me-0">
                         <button
