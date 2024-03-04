@@ -4,6 +4,8 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use Stichoza\GoogleTranslate\GoogleTranslate;
 
+use function Ramsey\Uuid\v1;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +24,6 @@ Route::get('/translate',function(){
 Route::get('/', function () {
     return view('Client.index');
 });
-
 
 Route::get('/cart', function () {
     return view('Client.cart');
@@ -44,6 +45,9 @@ Route::get('/checkout', function () {
     return view('Client.checkout');
 });
 
+Route::get('/login', function() {
+    return view('Client.login');
+});
 //----------------------------------------------------------------------
 //ADMIN
 Route::get('/{name}', [
@@ -123,3 +127,4 @@ Route::get('/Administrator/{id}', [
 Route::put('/Administrator/{id}', [
     AdminController::class, 'update'
 ]);
+

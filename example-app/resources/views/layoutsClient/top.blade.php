@@ -106,8 +106,23 @@
                         </a>
                     </div>
                 </div>
+<<<<<<< HEAD
+                <div class="d-flex m-3 me-0">
+                    <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-warning"></i></button>
+                    <a href="/cart"  class="position-relative me-4 my-auto text-warning">
+                        <i class="fa fa-shopping-bag fa-2x"></i>
+                        <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
+                    </a>
+                    <a href="/login" class="my-auto text-warning ">
+                        <i class="fas fa-user fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+=======
             </nav>
         </div>
+>>>>>>> 6b08a6dc0be7171e74e5ddac0dc57de8ef22b1c1
     </div>
     <!-- Navbar End -->
 
