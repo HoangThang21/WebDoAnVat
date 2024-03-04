@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //php artisan serve
-
+Route::get('translate',function(){
+    $lang = new GoogleTranslate('en');
+    return $lang->setSource('en')->setTarget('vi')->translate("Hello World");
+});
 Route::get('/', function () {
     return view('Client.index');
 });
