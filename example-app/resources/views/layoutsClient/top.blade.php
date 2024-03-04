@@ -74,8 +74,9 @@
                 </div>
                 <div class="ps-2">
                     <select class="form-select changeLang">
-                        <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
-                        <option value="vi" {{ session()->get('locale') == 'vi' ? 'selected' : '' }}>
+                   
+                        <option style="background-image:url(../../../public/img/us.png);"  value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
+                        <option style="background-image:url(../../../public/img/vietnam.png);" value="vi" {{ session()->get('locale') == 'vi' ? 'selected' : '' }}>VietNamese
                         </option>
                     </select>
                 </div>
