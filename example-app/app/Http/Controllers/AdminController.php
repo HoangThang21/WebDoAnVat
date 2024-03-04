@@ -254,7 +254,7 @@ class AdminController extends Controller
     }
     public function qldanhmuc()
     {
-        return view('Auth.qlcart.listthanhtoan', [
+        return view('Auth.qldanhmuc.listdanhmuc', [
             'ttnguoidung' =>   Auth::guard('api')->user(),
             'user' => User::all(),
             'sanpham' => SanPham::all(),
@@ -418,10 +418,11 @@ class AdminController extends Controller
 
     public function nutSuaSanPham(Request $request)
     {
+    
         $request->validate([
             'txttensp' => 'required',
             'txtgia' => 'required',
-            'txthinh' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'txthinh' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'optdanhmuc' => 'required',
             'txtslton' => 'required',
             'txtdaban' => 'required',
@@ -446,7 +447,7 @@ class AdminController extends Controller
 
             ]);
         } else {
-            $sanpham = SanPham::where('id', $request->input('iddanhmuc'))
+            $sanpham = SanPham::where('id', $request->input('idsanpham'))
                 ->update([
                     'tensanpham' => $request->input('txttensp'),
                     'gia' => $request->input('txtgia'),
