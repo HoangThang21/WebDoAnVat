@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,6 +20,9 @@ use function Ramsey\Uuid\v1;
 */
 //php artisan serve
 
+Route::get('/translate', [
+    MainController::class, 'index'
+]);
 Route::get('/', function () {
     return view('Client.index');
 });
@@ -125,4 +129,3 @@ Route::get('/Administrator/{id}', [
 Route::put('/Administrator/{id}', [
     AdminController::class, 'update'
 ]);
-
