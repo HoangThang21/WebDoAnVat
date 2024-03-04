@@ -4,30 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Stichoza\GoogleTranslate\GoogleTranslate;
+use Illuminate\Support\Facades\App;
 
 class LangController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public static function langen_vi()
+    
+    public function index()
     {
-        $lang = new GoogleTranslate('en');
-
-        return [
-            'helo' => $lang->setSource('en')->setTarget('vi')->translate('hello'),
-            'helo2' => $lang->setSource('en')->setTarget('vi')->translate('hello 2'),
-
-
-
-        ];
+        return view('Client.index');
     }
-    public function langvi_en()
+    public function change(Request $request)
     {
-        $lang = new GoogleTranslate('vi');
-
-        return [
-            $lang->setSource('vi')->setTarget('en')->translate("Chào thế giới")
-        ];
+        App::setLocale($request->lang);
+        session()->put('locale', $request->lang);
+        return redirect()->back();
     }
+
 }

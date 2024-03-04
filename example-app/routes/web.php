@@ -4,7 +4,7 @@ use App\Http\Controllers\AdminController;
 
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LangController;
 
 use function Ramsey\Uuid\v1;
 
@@ -129,3 +129,6 @@ Route::get('/Administrator/{id}', [
 Route::put('/Administrator/{id}', [
     AdminController::class, 'update'
 ]);
+
+Route::get('/index/home', [LangController::class, 'index']);
+Route::get('/index/change', [LangController::class, 'change'])->name('changeLang');

@@ -63,17 +63,13 @@
                             class="text-dark">nhom_2@gmail.com</a></small> --}}
                     <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="#"
                             class="text-dark">
-                            @foreach ($lang as $key => $value)
-                                @if ($key == 'helo')
-                                    {{ $value }}
-                                @endif
-                            @endforeach
+                           
                         </a></small>
                 </div>
                 <div class="top-link pe-2">
-                    <a href="#" class="text-white"><small class="text-dark mx-2">Privacy Policy</small>/</a>
-                    <a href="#" class="text-white"><small class="text-dark mx-2">Terms of Use</small>/</a>
-                    <a href="#" class="text-white"><small class="text-dark ms-2">Sales and Refunds</small></a>
+                    <a href="#" class="text-white"><small class="text-dark mx-2">{{ GoogleTranslate::trans('Privacy Policy', app()->getLocale()) }}</small>/</a>
+                    <a href="#" class="text-white"><small class="text-dark mx-2">{{ GoogleTranslate::trans('Terms of Use', app()->getLocale()) }}</small>/</a>
+                    <a href="#" class="text-white"><small class="text-dark ms-2">{{ GoogleTranslate::trans('Sales and Refunds', app()->getLocale()) }}</small></a>
                 </div>
             </div>
         </div>

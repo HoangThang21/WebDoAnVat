@@ -106,5 +106,15 @@
 
     <!-- Template Javascript -->
     <script src="../../inc/js/main.js"></script>
+
+
+    <script type="text/javascript">
+            var url = "{{ route('changeLang') }}";
+            $(".changeLang").change(function(){
+                window.location.href = url + "?index="+ $(this).val();
+            });
+        </script>
+        
     </body>
+    
 </html>
