@@ -242,8 +242,13 @@ class AdminController extends Controller
     }
     public function qlthanhtoan()
     {
-        return view('Auth.qlnguoidung.profile', [
+        return view('Auth.qlcart.listthanhtoan', [
             'ttnguoidung' =>   Auth::guard('api')->user(),
+            'user' => User::all(),
+            'sanpham' => SanPham::all(),
+            'danhmuc' => DanhMuc::all(),
+            'cart' => Cart::all(),
+
 
         ]);
     }
@@ -251,8 +256,8 @@ class AdminController extends Controller
     {
         return view('Auth.qlcart.listthanhtoan', [
             'ttnguoidung' =>   Auth::guard('api')->user(),
-            'user'=>User::all(),
-            'sanpham'=>SanPham::all(),
+            'user' => User::all(),
+            'sanpham' => SanPham::all(),
             'danhmuc' => DanhMuc::all(),
             'cart' => Cart::all(),
 
