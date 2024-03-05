@@ -48,6 +48,39 @@ class MainController extends Controller
     {
         //
     }
+    public function cart()
+    {
+        return view('Client.cart');
+    }
+    public function contact()
+    {
+        return view('Client.contact');
+    }
+    public function shop()
+    {
+        return view('Client.shop', ['sanphamsearch' => SanPham::all()]);
+    }
+    public function detailshop()
+    {
+        return view('Client.detailshop');
+    }
+    public function testimonial()
+    {
+        return view('Client.testimonial');
+    }
+    public function checkout()
+    {
+        return view('Client.checkout');
+    }
+    public function login()
+    {
+        return view('Client.login');
+    }
+    public function register()
+    {
+        return view('Client.cartregister');
+    }
+
 
     /**
      * Show the form for editing the specified resource.

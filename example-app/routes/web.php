@@ -26,37 +26,36 @@ Route::get('/translate', [
 Route::post('/search', [
     MainController::class, 'search'
 ]);
-Route::get('/', function () {
-    return view('Client.index');
-});
 
-Route::get('/cart', function () {
-    return view('Client.cart');
-});
-Route::get('/contact', function () {
-    return view('Client.contact');
-});
 
-Route::get('/shop', function () {
-    return view('Client.shop');
-});
-Route::get('/detailshop', function () {
-    return view('Client.shopdetail');
-});
-Route::get('/testimonial', function () {
-    return view('Client.testimonial');
-});
-Route::get('/checkout', function () {
-    return view('Client.checkout');
-});
 
-Route::get('/login', function () {
-    return view('Client.login');
-});
+Route::get('/cart', [
+    MainController::class, 'cart'
+]);
+Route::get('/contact', [
+    MainController::class, 'contact'
+]);
 
-Route::get('/register', function () {
-    return view('Client.register');
-});
+Route::get('/shop', [
+    MainController::class, 'shop'
+]);
+Route::get('/detailshop', [
+    MainController::class, 'detailshop'
+]);
+Route::get('/testimonial', [
+    MainController::class, 'testimonial'
+]);
+Route::get('/checkout', [
+    MainController::class, 'checkout'
+]);
+
+Route::get('/login', [
+    MainController::class, 'login'
+]);
+
+Route::get('/register', [
+    MainController::class, 'register'
+]);
 //----------------------------------------------------------------------
 //ADMIN
 Route::get('/{name}', [

@@ -74,9 +74,12 @@
                 </div>
                 <div class="ps-2">
                     <select class="form-select changeLang">
-                   
-                        <option style="background-image:url(../../../public/img/us.png);"  value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>English</option>
-                        <option style="background-image:url(../../../public/img/vietnam.png);" value="vi" {{ session()->get('locale') == 'vi' ? 'selected' : '' }}>VietNamese
+
+                        <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}>
+                            English
+                        </option>
+                        <option value="vi" {{ session()->get('locale') == 'vi' ? 'selected' : '' }}>
+                            VietNamese
                         </option>
                     </select>
                 </div>
@@ -95,18 +98,18 @@
                 <div class="collapse navbar-collapse bg-white" id="navbarCollapse">
                     <div class="navbar-nav mx-auto">
                         <a href="/" class="nav-item nav-link ">Trang chủ</a>
-                        <a href="shop" class="nav-item nav-link ">Cửa hàng</a>
-                        <a href="detailshop" class="nav-item nav-link ">Thông tin cửa hàng</a>
+                        <a href="/shop" class="nav-item nav-link ">Cửa hàng</a>
+                        <a href="/detailshop" class="nav-item nav-link ">Thông tin cửa hàng</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Xem thêm</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
 
-                                <a href="checkout" class="dropdown-item">Thanh toán</a>
-                                <a href="testimonial" class="dropdown-item">Feedback</a>
+                                <a href="/checkout" class="dropdown-item">Thanh toán</a>
+                                <a href="/testimonial" class="dropdown-item">Feedback</a>
                                 <!-- <a href="404.html" class="dropdown-item">404 Page</a> -->
                             </div>
                         </div>
-                        <a href="contact" class="nav-item nav-link">Liên Hệ</a>
+                        <a href="/contact" class="nav-item nav-link">Liên Hệ</a>
                     </div>
                     <div class="d-flex m-3 me-0">
                         <button
